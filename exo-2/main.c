@@ -2,12 +2,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include "../common/common.h"
-#define LEN 80
+#define LENMOT 80
+#define LENKEY 8
 
 
 //prototype
 
-void exo1(void);
+void exo2(void);
 void prog(void);
 
 
@@ -23,6 +24,8 @@ int main(void){
 
 void prog(){
 
+
+
     char lancer[] = "1";
 
     int t = (int)lancer[0];
@@ -30,7 +33,7 @@ void prog(){
 
     while( t == '1'){
 
-        exo1();
+        exo2();
 
         printf("\n\nRelancer le programme ?\n");
         printf("\n1)Oui\n");
@@ -42,11 +45,12 @@ void prog(){
 
 
     }    
+
 }
 
-void exo1(){
+void exo2(){
 
-    char key[4] = {0};
+    char key[LENKEY];
 
     long int keyNumber, cryptNumber;
 
@@ -55,9 +59,10 @@ void exo1(){
     char *mot = NULL;
 
 
-    mot = (char*)malloc(sizeof(*mot) * (LEN + 1) );
+    mot = (char*)malloc(sizeof(*mot) * (LENMOT + 1) );
 
-    intro("1");
+    intro("2");
+
 
     printf("1) crypter \n");
     printf("\n2) decrypter \n");
@@ -65,16 +70,19 @@ void exo1(){
 
     scanner(crypt,sizeof(crypt));
 
+    do{
 
-    printf("\nEntree votre cle \n");
-    printf("\n=> ");
+        printf("\nEntree votre cle de 8 chiffres entre 1 et 8\n");
+        printf("\n=> ");
 
-    scanner(key, sizeof(key));
+        scanner(key, LENKEY + 1);
+
+    }while( strlen(key) < LENKEY  || strlen(key) > LENKEY || AuthKeyEight(key) == false);
 
     printf("\nEntree votre mot \n");
     printf("\n=> ");
 
-    scanner(mot, LEN + 1);
+    scanner(mot, LENMOT + 1);
 
     stringToUppercase( mot );          
 
@@ -82,7 +90,7 @@ void exo1(){
 
     printf("\nle mot est %s \n\net la cle %d\n", mot, keyNumber);
 
-    if ( checkLetterOrSpace( mot ) == false) {
+    if ( checkLetterOrZero( mot ) == false) {
 
         printf("\n les caracteres rentre sont incorrecte \n");
         exit(1);
@@ -93,18 +101,17 @@ void exo1(){
     if(cryptNumber == 2){
 
 
-        keyNumber = 0 - keyNumber;
-
-        Encrypt1(mot, &keyNumber);
+        Decrypt2(mot, &keyNumber);
 
     }else{
 
-        Encrypt1(mot, &keyNumber);
+        Encrypt2(mot, &keyNumber);
 
 
     }
 
     printf("\nle nouveau mot est [%s]", mot);
+
 
     free(mot);
 }
