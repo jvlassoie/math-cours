@@ -4,12 +4,11 @@
 #include "../common/common.h"
 #include "./function.h"
 #define LENMOT 80
-#define LENKEY 8
 
 
 //prototype
 
-void exo2(void);
+void exo3(void);
 void prog(void);
 
 
@@ -34,7 +33,7 @@ void prog(){
 
     while( t == '1'){
 
-        exo2();
+        exo3();
 
         printf("\n\nRelancer le programme ?\n");
         printf("\n1)Oui\n");
@@ -49,11 +48,10 @@ void prog(){
 
 }
 
-void exo2(){
+void exo3(){
+Encrypt3();
+/*    char key[LENKEY];
 
-    char key[LENKEY];
-
-    long int keyNumber, cryptNumber;
 
     char crypt[2] = {0};
 
@@ -62,7 +60,7 @@ void exo2(){
 
     mot = (char*)malloc(sizeof(*mot) * (LENMOT + 1) );
 
-    intro("2");
+    intro("3");
 
 
     printf("1) crypter \n");
@@ -71,48 +69,29 @@ void exo2(){
 
     scanner(crypt,sizeof(crypt));
 
-    do{
-
-        printf("\nEntree votre cle de 8 chiffres entre 1 et 8\n");
-        printf("\n=> ");
-
-        scanner(key, LENKEY + 1);
-
-    }while( strlen(key) < LENKEY  || strlen(key) > LENKEY || AuthKeyEight(key) == false);
-
-    printf("\nEntree votre mot \n");
+ 
+    printf("\nEntree votre phrase \n");
     printf("\n=> ");
 
     scanner(mot, LENMOT + 1);
 
-    stringToUppercase( mot );          
 
-    keyNumber = strtol(key,NULL, 10);
-
-    printf("\nle mot est %s \n\net la cle %d\n", mot, keyNumber);
-
-    if ( checkLetterOrZero( mot ) == false) {
-
-        printf("\n les caracteres rentre sont incorrecte \n");
-        exit(1);
-    }
 
     cryptNumber = strtol(crypt,NULL,10);
 
     if(cryptNumber == 2){
 
-
-        Decrypt2(mot, &keyNumber);
+        //decrypt
 
     }else{
 
-        Encrypt2(mot, &keyNumber);
+        //encrypt
 
 
     }
 
-    printf("\nle nouveau mot est [%s]", mot);
+    printf("\nla nouvelle phrase est [%s]", mot);
 
 
-    free(mot);
+    free(mot);*/
 }

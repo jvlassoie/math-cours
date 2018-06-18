@@ -1,0 +1,1 @@
+void sysEquDeuxInc(double X1,double X2,double Y1,double Y2,double res1,double res2);

@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include "../common/common.h"
+#include "./function.h"
 #define LEN 80
 
 
@@ -94,6 +94,7 @@ void exo1(){
 
 
         keyNumber = 0 - keyNumber;
+        
 
         Encrypt1(mot, &keyNumber);
 

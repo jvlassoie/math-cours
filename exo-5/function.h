@@ -1,0 +1,1 @@
+void equSecondDeg(double A,double B,double C);
