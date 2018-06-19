@@ -48,15 +48,6 @@ return true;
 
 }
 
-long long int power(int x, unsigned int n) {
-  long long int y = 1;
-   unsigned int m = 1;
-   while (m <= n) {
-      y *= x;
-      m++;
-   }
-   return y;
-}
 
 bool isEntier(float nb){
 
@@ -76,19 +67,22 @@ void Encrypt3(){
 
     int p,q,r,e,z,n,M;
     float d;
+    double C;
     bool check;
 
-    M= 11;
+    printf("Entre un nombre \n");
+    scanf("%d",&M);
     printf("le message non-crypt = %d\n",M);
     randomInit();    
     
-    p = nbAleatPrem(10,20);
+    p = nbAleatPrem(3,6);
 
     do
     {
-        q = nbAleatPrem(10,20);
+        q = nbAleatPrem(3,6);
 
     } while (p == q);
+
 
 
     printf("p = %d\n", p );
@@ -102,7 +96,7 @@ void Encrypt3(){
 //choix des bornes plus grande que p et q pour etre sur qu il soit premier ET PLUS GRAND QUE EUX
 
 // cle enryptage
-    e = nbAleatPrem(20,30);
+    e = nbAleatPrem(7,20);
 
     printf("e = %d\n", e );
 // cle deryptage
@@ -126,15 +120,10 @@ void Encrypt3(){
     printf("n = %d\n", n );
 
     printf("d = %f\n", d );
-    /*double C = pow((double)M,(double)e);*/
-/*    long long int C = power(M,e)%r;*/
-/*    printf("power = %f\n", C);*/
 
-    printf("power = %lf\n", fmod(powl((float)M,(float)e),r));
-/*    printf("le message encrypter est = %d\n", C);*/
-    /*printf("le message encrypter est = %d\n", (int)d);
-    printf("le message decrypter est = %d\n", (power(C,(int)d)%r));
-*/
+    C = fmod(pow((float)M,(float)e),(float)r);
+    printf("C = %f\n", C);
+    printf("M = %lf\n", fmod(pow(C,d),r));
 
 }
 
