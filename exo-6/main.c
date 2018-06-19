@@ -50,6 +50,38 @@ void prog(){
 
 void exo6(){
 
-    intro("6");
+   int choix;
+
+   intro("6");
+
+
+
+
+
+   printf("1) Somme de 2 polynomes \n");
+   printf("2) Produit de 2 polynomes \n");
+   printf("3) Produit d'un polynome par un coefficient reel \n");
+   printf("\nchoix => ");
+   scanf("%d", &choix);
+
+   switch (choix)
+   {
+    case 1:
+    drainBuffer();
+    additionDeuxPoly();
+    break;
+
+    case 2:
+    drainBuffer();
+    multDeuxPoly();
+    break;
+
+    case 3:
+    drainBuffer();
+    multCoefReelPoly();
+    break;
+
+}
+
 
 }

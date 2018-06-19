@@ -52,6 +52,8 @@ void exo11(){
 
     int choix;
 
+    intro("11");
+
     printf("1) Addition de 2 matrices \n");
     printf("2) Multiplication de 2 matrices \n");
     printf("3) Multiplication d'une matrice par un scalaire \n");
