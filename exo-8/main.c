@@ -8,7 +8,7 @@
 
 //prototype
 
-void exo7(void);
+void exo8(void);
 void prog(void);
 
 
@@ -33,7 +33,7 @@ void prog(){
 
     while( t == '1'){
 
-        exo7();
+        exo8();
 
         printf("\n\nRelancer le programme ?\n");
         printf("\n1)Oui\n");
@@ -48,11 +48,12 @@ void prog(){
 
 }
 
-void exo7(){
+void exo8(){
 
 
-   intro("7");
+   intro("8");
 
-   diaVenn();
+   treeBin();
+
 
 }
