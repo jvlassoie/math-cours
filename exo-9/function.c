@@ -17,7 +17,7 @@ void sysEquDeuxInc(double X1,double X2,double Y1,double Y2,double res1,double re
 	 if (determinant == 0);
 	 {
 
-	 	printf("Il n'y a pas d unique solution pour x et y\n", );
+	 	printf("Il n'y a pas d unique solution pour x et y\n");
 	 	exit(1);
 	 }
 

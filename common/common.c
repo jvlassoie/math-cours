@@ -91,6 +91,58 @@ int scanner(char *string, int taille){
 
 
 
+void randomInit(){
+  srand(time(NULL));
+}
+
+int nbAleat(int MIN,int MAX){
+
+    /*srand(time(NULL));*/
+
+    return rand()%(MAX-MIN+1)+MIN;
+}
+
+int nbAleatPrem(int MIN,int MAX){
+    int nbaleat = nbAleat(MIN,MAX);
+
+    while(isNBpremier(nbaleat) == false){
+
+        nbaleat = nbAleat(MIN,MAX);
+
+    }
+
+    return nbaleat;
+}
+
+//le franglais :p
+bool isNBpremier(int nbTest){
+
+
+   for (int i = 2; i < nbTest - 1; ++i)
+   {
+
+    if (nbTest%i == 0)
+    {
+      return false;
+  }
+
+}
+
+return true;
+
+}
+
+
+bool isEntier(float nb){
+
+printf("%f\n", nb);
+    if (nb - (int)nb == 0.0)
+    {
+        return true;
+    }
+
+    return false;
+}
 
 
 

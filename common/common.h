@@ -3,3 +3,8 @@ void intro(char *exo);
 void stringToUppercase( char *mot );
 void drainBuffer();
 int scanner(char *string, int taille);
+int nbAleat(int MIN,int MAX);
+bool isNBpremier(int nbTest);
+void randomInit();
+bool isEntier(float nb);
+int nbAleatPrem(int MIN,int MAX);
